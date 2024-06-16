@@ -14,7 +14,7 @@ if (!($Semver[0] -like 'pypy*') -and ([int]$Semver[0] -eq 3 -and [int]$Semver[1]
         Invoke-Expression -Command "$PythonPath -m pip install typing"
         Remove-Item $GetPipFile
         if ([int]$Semver[1] -eq 4) {
-            Invoke-Expression -Command "$PythonPath -m pip install --upgrade wheel setuptools"
+            Invoke-Expression -Command "$PythonPath -m pip install --trusted-host pypi.org --upgrade wheel setuptools"
         }
     } else {
         Write-Output "Pip is not available for version $Version"
