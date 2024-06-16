@@ -70,8 +70,3 @@ runs:
         token: ${{ inputs.token }}
         cache-dependency-path: ${{ inputs.cache-dependency-path }}
         update-environment: ${{ inputs.update-environment }}
-    - run: ${{ github.action_path }}/setup_pip.ps1
-      shell: pwsh
-      env:
-        PYTHON_VERSION: ${{ steps.setup.outputs.python-version }}
-        SETUP_PYTHON_PATH: ${{ steps.setup.outputs.python-path }}
